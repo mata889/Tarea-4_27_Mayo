@@ -18,8 +18,6 @@ public class AvailListsRegistrosDeLongVariable {
 
     static Scanner sc = new Scanner(System.in);
 
-    
-
     public static void main(String[] args) {
         System.out.println("**Para metodos de trabajo, se ha creado ya una lista predeterminada con metadata y registros ");
         ArrayList<String> registro = new ArrayList();
@@ -34,28 +32,36 @@ public class AvailListsRegistrosDeLongVariable {
             switch (menu) {
                 case 1: {
                     try {
-                         File file = new File("Registros.txt");
-                        Scanner scanner = new Scanner(file);
-                        int linea = 0;
-                        while (scanner.hasNext()) {
-                            String line = scanner.nextLine();
-                            if (line.contains("µ")) {
-                                String temp;
-                                temp = line.substring(1, line.length());
-                                meta = Meta(temp);
-                            } else if (line.contains("*")) {
-                                int donde = linea;
-                                double espacios = line.getBytes().length;
-                                Espacios e = new Espacios(donde, espacios);
-                                available.add(e);
-                            } else {
-                                registro.add(line);
+                        File file = new File("./Registros.txt");
+                        if (file.exists()) {
+                            Scanner scanner = new Scanner(file);
+                            int linea = 0;
+                            while (scanner.hasNext()) {
+                                String line = scanner.nextLine();
+                                if (line.contains("µ")) {
+                                    String temp;
+                                    temp = line.substring(1, line.length());
+                                    meta = Meta(temp);
+                                } else if (line.contains("*")) {
+                                    int donde = linea;
+                                    double espacios = line.getBytes().length;
+                                    Espacios e = new Espacios(donde, espacios);
+                                    available.add(e);
+                                } else {
+                                    registro.add(line);
+                                }
+                                linea++;
                             }
-                            linea++;
+                            if (scanner.hasNext()) {
+                                cargado = true;
+                                System.out.println("SE HAN CARGADO EXITOSAMENTE");
+                            }else{
+                                System.out.println("El archivoo esta vacio");}
+
+                        } else {
+                            System.out.println("EL ARCHIVO NO EXISTE");
                         }
-                        
-                        cargado = true;
-                        System.out.println("SE HAN CARGADO EXITOSAMENTE");
+
                     } catch (Exception e) {
                     }
                 }
