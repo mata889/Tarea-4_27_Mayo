@@ -38,7 +38,7 @@ public class AvailListsRegistrosDeLongVariable {
                             int linea = 0;
                             while (scanner.hasNext()) {
                                 String line = scanner.nextLine();
-                                if (line.contains("µ")) {
+                                if (line.contains("@")) {
                                     String temp;
                                     temp = line.substring(1, line.length());
                                     meta = Meta(temp);
@@ -52,7 +52,7 @@ public class AvailListsRegistrosDeLongVariable {
                                 }
                                 linea++;
                             }
-                            if (scanner.hasNext()) {
+                            if (file.exists()) {
                                 cargado = true;
                                 System.out.println("SE HAN CARGADO EXITOSAMENTE");
                             }else{
@@ -68,11 +68,12 @@ public class AvailListsRegistrosDeLongVariable {
                 break;
                 case 2: {
                     System.out.println(meta);
+                    System.out.println("_________________________________");
                     if (cargado == true) {
                         for (int i = 0; i < registro.size(); i++) {
                             StringTokenizer token = new StringTokenizer(registro.get(i), "|");
                             while (token.hasMoreTokens()) {
-                                System.out.print(token.nextToken());
+                                System.out.print(token.nextToken()+"    ");
                             }
                             System.out.println("");
                         }
@@ -91,10 +92,10 @@ public class AvailListsRegistrosDeLongVariable {
     }
 
     static String Meta(String meta) {
-        String mew = " ";
+        String mew ="";
         StringTokenizer token = new StringTokenizer(meta, "!");
         while (token.hasMoreTokens()) {
-            mew = token.nextToken() + "$0 ";
+            mew += token.nextToken() + "    ";
         }
         return mew;
     }
