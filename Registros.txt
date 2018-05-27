@@ -1,1 +1,11 @@
 µNombre!identidad!edad!Pais!
+Diego|1234|100|Honduras|
+Diego|1235|102|Guatemala|
+Diego|1236|10|Croacia|*
+Diego|1237|14|Honduras|
+Diego|1238|18|Honduras|
+Diego|1239|15|Russia|*
+Diego|1240|40|USA|*
+Diego|1241|15|Brasil|
+Diego|1242|52|Narnia|*
+Diego|1243|1|Honduras|
