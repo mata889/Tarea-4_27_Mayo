@@ -11,6 +11,9 @@ Saludos y feliz fin de semana.
  */
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Scanner;
 import java.util.StringTokenizer;
 
@@ -44,7 +47,7 @@ public class AvailListsRegistrosDeLongVariable {
                                     meta = Meta(temp);
                                 } else if (line.contains("*")) {
                                     int donde = linea;
-                                    double espacios = line.getBytes().length;
+                                    int espacios = line.getBytes().length;
                                     Espacios e = new Espacios(donde, espacios);
                                     available.add(e);
                                 } else {
@@ -83,7 +86,13 @@ public class AvailListsRegistrosDeLongVariable {
 
                 }
                 break;
-                case 3: {
+                case 3: {//Ordenar el arraylist available
+                    //Ordenarlo
+                    Collections.sort(available,(E1, E2) -> E1.getBytes()- E2.getBytes());
+                    for (Espacios espacios : available) {
+                        System.out.println(espacios);
+                    }
+                    System.out.println("");
                 }
                 break;
             }

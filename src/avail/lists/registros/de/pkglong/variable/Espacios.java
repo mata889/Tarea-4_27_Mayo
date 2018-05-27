@@ -1,14 +1,17 @@
 
 package avail.lists.registros.de.pkglong.variable;
 
-public class Espacios {
+import java.util.Collections;
+import java.util.Comparator;
+
+public class Espacios{
     int QLinea;
-    double bytes;
+    int bytes;
 
     public Espacios() {
     }
 
-    public Espacios(int QLinea, double bytes) {
+    public Espacios(int QLinea, int bytes) {
         this.QLinea = QLinea;
         this.bytes = bytes;
     }
@@ -21,11 +24,11 @@ public class Espacios {
         this.QLinea = QLinea;
     }
 
-    public double getBytes() {
+    public int getBytes() {
         return bytes;
     }
 
-    public void setBytes(double bytes) {
+    public void setBytes(int bytes) {
         this.bytes = bytes;
     }
 
@@ -33,6 +36,7 @@ public class Espacios {
     public String toString() {
         return  QLinea + ", bytes=" + bytes + '}';
     }
-    
+
     
 }
+
